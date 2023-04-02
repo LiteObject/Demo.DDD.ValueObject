@@ -1,7 +1,7 @@
 # DDD: What is a value object
 >A value object is a small object that represents a simple entity whose equality is not based on identity: i.e. two value objects are equal when they have the same value, not necessarily being the same object.
 ## Two important characteristics of value objects
-* They have no identity
+* They have **no identity**
 * They are **immutable**
   >Immutability is an important requirement. The values of a value object must be immutable once the object is created. Therefore, when the object is constructed, you must provide the required values, but you must not allow them to change during the object's lifetime.
 
