@@ -5,7 +5,31 @@
 * They are **immutable**
   >Immutability is an important requirement. The values of a value object must be immutable once the object is created. Therefore, when the object is constructed, you must provide the required values, but you must not allow them to change during the object's lifetime.
 
-  ---
+---
+## In C# 9, you can create a value object using `record` type
+```csharp
+
+public record Phone
+{
+    // init makes is immutable
+    public string Number { get; init; }
+    public string Type { get; init; }
+
+    public Phone(string Number, string Type)
+    {
+        this.Number = Number;
+        this.Type = Type;
+    }
+}
+
+...
+
+// Using public auto-implemented properties
+public record Phone(string Number, string Type)
+
+```
+
+---
 ## Links:
 * [Implement value objects](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/implement-value-objects)
 * [Best Practice - An Introduction To Domain-Driven Design](https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/best-practice-an-introduction-to-domain-driven-design)

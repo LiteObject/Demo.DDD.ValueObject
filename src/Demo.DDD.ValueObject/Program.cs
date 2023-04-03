@@ -37,6 +37,23 @@ namespace Demo.DDD.ValueObject
             Console.WriteLine("object.Equals(one, two): " + object.Equals(one, two)); // True
             Console.WriteLine("one.Equals(two): " + one.Equals(two)); // True
             Console.WriteLine($"one == two: {one == two}"); // True
+
+            Console.WriteLine("\nTHIRD EXAMPLE:\n");
+            Phone myPhone1 = new("214-000-0000", "Personal");
+            Phone myPhone2 = new("214-000-0000", "Personal");
+            Console.WriteLine(myPhone1.ToString());
+
+            if (myPhone1 == myPhone2)
+            {
+                Console.WriteLine($"{nameof(myPhone1)} is equal to {nameof(myPhone2)}");
+            }
+            else
+            {
+                Console.WriteLine($"{nameof(myPhone1)} is NOT equal to {nameof(myPhone2)}");
+            }
         }
+
+        public record Phone(string Number, string Type);
+
     }
 }
